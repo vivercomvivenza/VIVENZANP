@@ -140,10 +140,6 @@ body{
   margin:0 0 6px;
   color:var(--muted);
 }
-.role-card.highlight{
-  border:1px dashed rgba(212,175,55,0.3);
-  background:linear-gradient(180deg, rgba(212,175,55,0.06), rgba(255,255,255,0.4));
-}
 
 /* coords + map */
 .coords{
@@ -304,4 +300,4 @@ body{
     padding:12px 14px;
     font-size:0.95rem;
   }
-}
+            }
