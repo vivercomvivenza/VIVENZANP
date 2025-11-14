@@ -8,24 +8,77 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome (icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <link rel="stylesheet" href="styles.css" />
 
-  <script type="importmap">
-  {
-    "imports": {
-      "leaflet": "https://esm.sh/leaflet@1.9.4"
+  <style>
+    /* POPUP ESTILIZADO */
+    #browserPopup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
     }
-  }
-  </script>
+
+    #popupBox {
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 18px;
+      max-width: 320px;
+      text-align: center;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+      animation: popupIn .25s ease;
+    }
+
+    @keyframes popupIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    #popupBox h3 {
+      margin-top: 0;
+      color: #1f4d2e;
+      font-weight: 700;
+    }
+
+    .popup-btn {
+      margin-top: 14px;
+      padding: 10px 14px;
+      width: 100%;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .popup-yes {
+      background: #2e7d32;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .popup-no {
+      background: #eeeeee;
+      color: #222;
+    }
+  </style>
+
 </head>
 <body>
   <main class="site">
+
+    <!-- HEADER -->
     <header class="hero" id="top">
       <div class="hero-card">
         <img class="logo" src="IMG-20251107-WA0000.jpg" alt="Logo Vivenza">
@@ -34,7 +87,9 @@
       </div>
     </header>
 
+    <!-- CONTEÚDO -->
     <div class="container">
+
       <section class="card reveal" id="introducao">
         <h2><i class="fa-solid fa-leaf icon"></i> Introdução</h2>
         <p>O projeto Vivenza surgiu a partir do trabalho de Resolução de Problemas, com o objetivo de melhorar o descarte de lixo e promover a sustentabilidade no bairro Nove Colônias, em Nova Petrópolis - RS.</p>
@@ -42,7 +97,7 @@
 
       <section class="card reveal" id="problema">
         <h2><i class="fa-solid fa-triangle-exclamation icon"></i> Problema Identificado</h2>
-        <p>No bairro Nove Colônias, a coleta de lixo acontece apenas duas vezes por mês, o que causa acúmulo de resíduos e descarte irregular. O problema afeta o meio ambiente e a qualidade de vida dos moradores.</p>
+        <p>No bairro Nove Colônias, a coleta de lixo acontece apenas duas vezes por mês, o que causa acúmulo de resíduos e descarte irregular.</p>
       </section>
 
       <section class="card reveal" id="objetivos">
@@ -57,81 +112,156 @@
 
       <section class="card reveal" id="bairro">
         <h2><i class="fa-solid fa-map-pin icon"></i> Sobre o Bairro Nove Colônias</h2>
-        <p>O bairro é conhecido pela natureza preservada e pelo clima rural. Apesar da tranquilidade e da beleza natural, enfrenta dificuldades com o recolhimento adequado dos resíduos.</p>
+        <p>O bairro é conhecido pela natureza preservada e pelo clima rural.</p>
       </section>
 
       <section class="card reveal" id="funcoes">
         <h2><i class="fa-solid fa-users-line icon"></i> Funções no Projeto</h2>
+
         <div class="roles-grid">
           <div class="role-card">
             <h3>Bianca Barbosa — Diretora, Fotógrafa, Marketing Digital</h3>
-            <p>Coordena a equipe e a estratégia do projeto; registra visualmente ações e campanhas e gerencia a presença digital para engajamento comunitário.</p>
+            <p>Coordena a equipe e registra ações.</p>
           </div>
+
           <div class="role-card">
             <h3>Sofia de Oliveira — Vice-Diretora, Educadora Ambiental</h3>
-            <p>Apoia a direção e lidera programas educativos junto à comunidade, promovendo práticas sustentáveis e capacitação sobre gestão de resíduos.</p>
+            <p>Apoia a direção e lidera programas educativos.</p>
           </div>
+
           <div class="role-card">
             <h3>Juliana Rauch — Designer Gráfico, Gestora de Projetos</h3>
-            <p>Desenvolve comunicação visual clara e materiais informativos; organiza prazos, recursos e coordenação entre as frentes do projeto.</p>
+            <p>Cria materiais informativos e organiza prazos.</p>
           </div>
+
           <div class="role-card">
             <h3>Vinícius Bayer — Agente de Limpeza Urbana, Economista</h3>
-            <p>Planeja e executa rotinas de limpeza e logística de resíduos; analisa custos e modelos econômicos para sustentabilidade financeira do projeto.</p>
+            <p>Executa logística de resíduos e análise econômica.</p>
           </div>
+
           <div class="role-card">
             <h3>Wesley Borkert — Engenheiro Ambiental, Fiscal Ambiental</h3>
-            <p>Projeta soluções técnicas para tratamento e redução de resíduos e fiscaliza a conformidade ambiental das ações implementadas.</p>
+            <p>Desenvolve soluções técnicas e faz fiscalização ambiental.</p>
           </div>
+
           <div class="role-card">
             <h3>Anderson Buss — Técnico em Saneamento, Geógrafo</h3>
-            <p>Define pontos de coleta eficientes e projetos de infraestrutura sanitária; realiza estudos de campo e mapeamento dos impactos territoriais.</p>
+            <p>Define pontos de coleta e faz mapeamento territorial.</p>
           </div>
         </div>
       </section>
 
       <section class="card reveal" id="localizacao">
         <h2><i class="fa-solid fa-location-dot icon"></i> Localização e Pontos de Coleta</h2>
+
         <div class="coords">
-          <pre>29°23'34"S 51°00'19"W
-29°23'15"S 51°00'10"W
-29°23'14"S 50°59'30"W
-29°23'25"S 50°59'01"W</pre>
+29°23'34"S 51°00'19"W  
+29°23'15"S 51°00'10"W  
+29°23'14"S 50°59'30"W  
+29°23'25"S 50°59'01"W
         </div>
+
         <div id="map" class="map"></div>
+
         <div class="map-controls">
-          <button id="refreshMap" class="map-btn"><i class="fa-solid fa-arrows-rotate"></i> Recarregar mapa</button>
+          <button id="refreshMap" class="map-btn">
+            <i class="fa-solid fa-arrows-rotate"></i> Recarregar mapa
+          </button>
         </div>
       </section>
 
       <section class="card reveal" id="conclusao">
         <h2><i class="fa-solid fa-globe icon"></i> Conclusão</h2>
-        <p>O projeto Vivenza busca unir tecnologia e consciência ambiental para transformar a realidade local. Através da colaboração dos moradores e das autoridades, é possível construir um futuro mais limpo e sustentável.</p>
+        <p>O projeto Vivenza busca unir tecnologia e consciência ambiental para transformar o bairro Nove Colônias.</p>
       </section>
+
     </div>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-top">
-        <img class="footer-logo" src="IMG-20251107-WA0000.jpg" alt="Logo Vivenza">
+        <img class="footer-logo" src="IMG-20251107-WA0000.jpg" alt="logo">
         <p class="footer-slogan"><strong>Viver bem é viver com Vivenza</strong></p>
       </div>
 
       <div class="contact">
         <div class="contact-links">
-          <a class="contact-link" href="https://www.instagram.com/vivercomvivenza?igsh=MTVxdWtkbHMzbGlocg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram: @vivercomvivenza</a>
-          <a class="contact-link" href="https://wa.me/5554996960989" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp: +55 (54) 99696-0989</a>
-          <a class="contact-link" href="https://x.com/VivenzaNP" target="_blank"><i class="fa-brands fa-x-twitter"></i> X: @VivenzaNP</a>
-          <a class="contact-link" href="https://www.facebook.com/share/1brgPoAG7R/" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook: Vivenza NP</a>
+
+          <a class="contact-link" href="https://www.instagram.com/vivercomvivenza" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram: @vivercomvivenza
+          </a>
+
+          <a class="contact-link" href="https://wa.me/5554996960989" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp: +55 (54) 99696-0989
+          </a>
+
+          <a class="contact-link" href="https://x.com/VivenzaNP" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+            X: @VivenzaNP
+          </a>
+
+          <a class="contact-link" href="https://www.facebook.com/share/1brgPoAG7R/" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+            Facebook: Vivenza NP
+          </a>
+
         </div>
       </div>
 
-      <p>Projeto desenvolvido por <strong>Anderson Buss, Bianca Barbosa, Juliana Rauch, Sofia de Oliveira, Vinícius Bayer</strong> e <strong>Wesley Borkert</strong>.<br>Escola Bom Pastor — 2025.</p>
+      <p>
+        Projeto desenvolvido por:<br>
+        <strong>
+        Anderson Buss, Bianca Barbosa, Juliana Rauch,  
+        Sofia de Oliveira, Vinícius Bayer, Wesley Borkert.
+        </strong><br>
+        Escola Bom Pastor — 2025.
+      </p>
     </footer>
 
-    <button id="backTop" aria-label="Voltar ao topo" title="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
+    <button id="backTop" title="Topo"><i class="fa-solid fa-arrow-up"></i></button>
+
   </main>
 
-  <script type="module" src="script.js"></script>
+  <!-- POPUP HTML -->
+  <div id="browserPopup">
+    <div id="popupBox">
+      <h3>Abrir no Google Chrome?</h3>
+      <p>Se o site não abrir corretamente neste navegador, você pode continuar no Chrome.</p>
+
+      <button class="popup-btn popup-yes" onclick="openChrome()">Abrir no Chrome</button>
+      <button class="popup-btn popup-no" onclick="closePopup()">Continuar aqui</button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="script.js"></script>
+
+  <script>
+    function isMiBrowser() {
+      return navigator.userAgent.toLowerCase().includes("miui") ||
+             navigator.userAgent.toLowerCase().includes("xiaomi") ||
+             navigator.userAgent.toLowerCase().includes("mi browser");
+    }
+
+    function openChrome() {
+      window.location.href =
+        "intent://vivercomvivenza.github.io/VIVENZANP/#Intent;scheme=https;package=com.android.chrome;end;";
+    }
+
+    function closePopup() {
+      document.getElementById("browserPopup").style.display = "none";
+    }
+
+    // Mostrar depois de 3 segundos
+    setTimeout(() => {
+      if (isMiBrowser()) {
+        document.getElementById("browserPopup").style.display = "flex";
+      }
+    }, 3000);
+  </script>
+
 </body>
-              </html>
+</html>
