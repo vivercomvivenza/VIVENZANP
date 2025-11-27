@@ -131,6 +131,159 @@
         <img class="footer-logo" src="IMG-20251107-WA0000.jpg" alt="Logo Vivenza">
         <p class="footer-slogan"><strong>Viver bem é viver com Vivenza</strong></p>
       </div>
+<!-- GALERIA — NOVE COLÔNIAS -->
+<section class="galeria-nove-colonias card reveal">
+  <h2><i class="fa-solid fa-image icon"></i> Galeria — Nove Colônias</h2>
+
+  <div class="galeria-grid" id="galeriaGrid">
+    <!-- As imagens aparecem automaticamente via script.js -->
+  </div>
+
+  <button id="btnVerMais" class="ver-mais">Ver mais fotos</button>
+</section>
+
+
+      <!-- Contacts -->
+      <div class="contact">
+        <div class="contact-links">
+
+          <a class="contact-link" href="https://www.instagram.com/vivercomvivenza" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i> Instagram: @vivercomvivenza
+          </a>
+
+          <a class="contact-link" href="https://wa.me/5554996960989" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp: +55 (54) 99696-0989
+          </a>
+
+          <a class="contact-link" href="https://x.com/VivenzaNP" target="_blank" rel="noopener">
+            <i class="fa-brands fa-x-twitter"></i> X: @VivenzaNP
+          </a>
+
+          <a class="contact-link" href="https://www.facebook.com/share/1brgPoAG7R/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-facebook-f"></i> Facebook: Vivenza NP
+          </a>
+
+        </div>
+      </div>
+
+      <p>
+        <strong>Projeto desenvolvido por:</strong><br>
+        Anderson Buss<br>
+        Bianca Barbosa<br>
+        Juliana Rauch<br>
+        Sofia de Oliveira<br>
+        Vinícius Bayer<br>
+        Wesley Borkert<br>
+        <br>
+        Escola Bom Pastor — 2025.
+      </p>
+
+    </footer>
+
+    <button id="backTop" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
+  </main>
+
+  <script type="module" src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</body>
+</html>      </section>
+
+      <!-- Problema -->
+      <section class="card reveal" id="problema">
+        <h2><i class="fa-solid fa-triangle-exclamation icon"></i> Problema Identificado</h2>
+        <p>No bairro Nove Colônias, a coleta de lixo acontece apenas duas vezes por mês, causando acúmulo de resíduos e descarte irregular. Isso prejudica o ambiente e a qualidade de vida dos moradores.</p>
+      </section>
+
+      <!-- Objetivos -->
+      <section class="card reveal" id="objetivos">
+        <h2><i class="fa-solid fa-bullseye icon"></i> Objetivos</h2>
+        <ul class="objectives">
+          <li><i class="fa-solid fa-circle-check green"></i> Criar pontos de coleta seletiva no bairro.</li>
+          <li><i class="fa-solid fa-circle-check green"></i> Promover campanhas de conscientização ambiental.</li>
+          <li><i class="fa-solid fa-circle-check green"></i> Aumentar a frequência da coleta de lixo.</li>
+          <li><i class="fa-solid fa-circle-check green"></i> Envolver a comunidade nas ações sustentáveis.</li>
+        </ul>
+      </section>
+
+      <!-- Bairro -->
+      <section class="card reveal" id="bairro">
+        <h2><i class="fa-solid fa-map-pin icon"></i> Sobre o Bairro Nove Colônias</h2>
+        <p>O bairro é marcado pela beleza natural e tranquilidade, mas enfrenta dificuldades com a coleta e o descarte correto de resíduos.</p>
+      </section>
+
+      <!-- Funções -->
+      <section class="card reveal" id="funcoes">
+        <h2><i class="fa-solid fa-users-line icon"></i> Funções no Projeto</h2>
+
+        <div class="roles-grid">
+
+          <div class="role-card">
+            <h3>Bianca Barbosa — Diretora, Fotógrafa, Marketing Digital</h3>
+            <p>Lidera a equipe, registra ações do projeto e cuida do marketing digital para fortalecer o engajamento.</p>
+          </div>
+
+          <div class="role-card">
+            <h3>Sofia de Oliveira — Vice-Diretora, Educadora Ambiental, Design de Marca</h3>
+            <p>Auxilia na direção, promove educação ambiental e desenvolve a identidade visual do projeto.</p>
+          </div>
+
+          <div class="role-card">
+            <h3>Juliana Rauch — Engenheira de Dados, Gestora de Projetos</h3>
+            <p>Organiza e analisa dados, além de gerenciar prazos e processos internos.</p>
+          </div>
+
+          <div class="role-card">
+            <h3>Vinícius Bayer — Agente de Limpeza Urbana, Economista</h3>
+            <p>Atua na limpeza urbana, logística dos resíduos e análise econômica do projeto.</p>
+          </div>
+
+          <div class="role-card">
+            <h3>Wesley Borkert — Engenheiro Ambiental, Fiscal Ambiental</h3>
+            <p>Desenvolve soluções técnicas para tratamento de resíduos e fiscaliza a conformidade ambiental.</p>
+          </div>
+
+          <div class="role-card">
+            <h3>Anderson Buss — Técnico em Saneamento, Geógrafo</h3>
+            <p>Define pontos de coleta, apoia infraestrutura sanitária e realiza estudos de campo.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Localização -->
+      <section class="card reveal" id="localizacao">
+        <h2><i class="fa-solid fa-location-dot icon"></i> Localização e Pontos de Coleta</h2>
+
+        <div class="coords">
+          <pre>29°23'34"S 51°00'19"W
+29°23'15"S 51°00'10"W
+29°23'14"S 50°59'30"W
+29°23'25"S 50°59'01"W</pre>
+        </div>
+
+        <div id="map" class="map"></div>
+
+        <div class="map-controls">
+          <button id="refreshMap" class="map-btn">
+            <i class="fa-solid fa-arrows-rotate"></i> Recarregar mapa
+          </button>
+        </div>
+      </section>
+
+      <!-- Conclusão -->
+      <section class="card reveal" id="conclusao">
+        <h2><i class="fa-solid fa-globe icon"></i> Conclusão</h2>
+        <p>O projeto Vivenza une tecnologia, educação e colaboração comunitária para criar um ambiente mais limpo e sustentável.</p>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <img class="footer-logo" src="IMG-20251107-WA0000.jpg" alt="Logo Vivenza">
+        <p class="footer-slogan"><strong>Viver bem é viver com Vivenza</strong></p>
+      </div>
 
       <!-- Contacts -->
       <div class="contact">
